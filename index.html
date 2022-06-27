@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip-Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="input">
+            <!-- make a form for the user to input data -->
+            <form id="input-info">
+                <!-- give the user a section for the amount of the bill -->
+                <label for="bill">Bill Amount:</label>
+                <input type="text" id="bill" name="bill">
+                <br>
+                <label id="tips-amount" for="tip-amount">Choose tip amount: </label>
+                <select name="tip-amount" id="tip-amount" form="input-info">
+                    <!-- give the user values to choose from -->
+                    <option value="5%">5%</option>
+                    <option value="10%">10%</option>
+                    <option value="15%">15%</option>
+                    <option value="25%">25%</option>
+                    <option value="50%">50%</option>
+                </select>
+                <br>
+                <!-- give the user a section for the amount of customers there are -->
+                <label for="number-customer">Number of Customers:</label>
+                <input type="text" id="number-customer" name="number-customer">
+                <!-- make a submit button -->
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="info-output-section">
+            <h2 id="tip-amount">Tip Amount</h2>
+            <h4 id="total-per-person">$0.00</h4>
+            <p>per person</p>
+            <h2 id="Total-Tip">Total Bill</h2>
+            <h4 id="split-bill">$0.00</h4>
+            <p>per person</p>
+        </div>
+    </div>
+    
+</body>
+<script src="app.js"></script>
+</html>
