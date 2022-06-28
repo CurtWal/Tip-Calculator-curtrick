@@ -4,20 +4,41 @@ body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: lightskyblue;
 }
+#title_and_info{
+    text-align: center;
+}
 .main-container{
-    background-color:rgb(251, 250, 255);
-        width:60vw;
+    background-color:lightskyblue;
+        width:50vw;
         height:60vh;
-        margin-left:20%;
-        margin-top:10%;
-        border-radius:20px;
-        border: solid;
+        margin-left:24%;
+        margin-top:2%;
         display:flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        text-align: center;
 }
 .input{
     background-color:rgb(253, 224, 245);
-    display: flex;
-    flex-direction: column;
-    
+    border: solid lightgreen;
+    border-radius: 25px;
+    width: 325px;
+}
+#submit{
+    background-color: lightgreen;
+    font-size: large;
+    border-radius: 5px;
+}
+#info-output-section{
+    background-color: lightgreen;
+    width: 325px;
+    border: solid rgb(253, 224, 245);
+    border-radius: 25px;
+}
+#reset{
+    background-color: rgb(253, 224, 245);
+    font-size: large;
+    border-radius: 5px;
+}
+#name{
+    text-align: center;
 }
