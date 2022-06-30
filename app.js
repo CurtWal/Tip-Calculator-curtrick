@@ -13,44 +13,44 @@ let total_bill = document.getElementById('split-bill'); //get the split-bill id 
 let restart = document.getElementById('reset'); // grab the reset button id from html doc
 
 // constructer function for the tip-cal form
-function Info(bill, tipAmount, numOfCustomer){
+function Info(bill, tipAmount, numOfCustomer) {
     this.bill = bill;
     this.tipAmount = tipAmount;
     this.numOfCustomer = numOfCustomer;
 }
 
 // add event listener to submit button
-form.addEventListener('submit',function(e){
+form.addEventListener('submit', function (e) {
     // form doesn't reset html after sumbitting
     e.preventDefault();
 
-        // Only allow numbers to be input 
+    // Only allow numbers to be input 
     let totalbillAmount = parseFloat(bill.value);
-    
-    
+
+
     // the value tip amount
     let tip = parseInt(tipAmount.value);
-console.log(tip)
-   
-// the amount of customers
+    console.log(tip)
+
+    // the amount of customers
     let customer = parseInt(numOfCustomer.value);
-console.log(customer)
+    console.log(customer)
 
     // making a new object constructer function
     let infoData = new Info(totalbillAmount, tip, customer);
+    // store items in local storage
+    localStorage.setItem('infoData', JSON.stringify(infoData));
 
-    localStorage.setItem('infoData', JSON.stringify(infoData)); // store items in local storage
-	
 
     getValues(infoData.bill, infoData.tipAmount, infoData.numOfCustomer);
 });
 
 // write a function that calculates the total of the bill and and splits it between the number of customers
-function getValues(bill,tip,customers){
+function getValues(bill, tip, customers) {
 
     // need percentage of each bill
     let tipPercent = (tip / 100) * bill;
-    
+
     // splitting the bill
     let billSplit = tipPercent / customers;
 
@@ -61,18 +61,18 @@ function getValues(bill,tip,customers){
     total = total.toFixed(2);
     console.log(total);
 
-    results(billSplit.toFixed(2),total)
+    results(billSplit.toFixed(2), total)
 }
 
 // show the results of the tip amount and the cost of the total bill split between all the customers
-function results(tip,total){
+function results(tip, total) {
     tipPerPerson.innerHTML = tip;
     console.log(tip);
     total_bill.innerHTML = total;
 }
 
 // make a way to reset page without reloading page
-function cleanReset(){
+function cleanReset() {
     // resets the tip and bill total back to $0
     tipPerPerson.innerHTML = "$0.00";
     total_bill.innerHTML = "$0.00";
@@ -81,6 +81,6 @@ function cleanReset(){
 }
 
 // Make a way to call the function above when clicking reset button
-restart.addEventListener('click',function(){
+restart.addEventListener('click', function () {
     cleanReset();
 })

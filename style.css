@@ -22,22 +22,30 @@ body{
     border: solid lightgreen;
     border-radius: 25px;
     width: 325px;
+    box-shadow: 5px 5px 5px lightgreen;
 }
 #submit{
     background-color: lightgreen;
     font-size: large;
     border-radius: 5px;
 }
+#submit:hover{
+    cursor: pointer;
+}
 #info-output-section{
     background-color: lightgreen;
     width: 325px;
     border: solid rgb(253, 224, 245);
     border-radius: 25px;
+    box-shadow: 5px 5px 5px rgb(253, 224, 245);
 }
 #reset{
     background-color: rgb(253, 224, 245);
     font-size: large;
     border-radius: 5px;
+}
+#reset{
+    cursor: pointer;
 }
 #name{
     text-align: center;
